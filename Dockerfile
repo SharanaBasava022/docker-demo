@@ -8,4 +8,4 @@ RUN npm install
 
 #When we run the docker image then the cmd[npm start will initiate] 
 
-CMD [ "npm" "start" ]
+CMD [ "npm" , "start" ]
