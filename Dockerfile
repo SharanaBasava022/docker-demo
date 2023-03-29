@@ -1,8 +1,8 @@
 FROM node:15.10-alpine
 
-WORKDIR /app
+WORKDIR /appl
 
-COPY . /app
+COPY . /appl
 
 RUN npm install
 
