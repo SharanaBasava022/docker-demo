@@ -6,7 +6,7 @@ node {
     }
 
 
-    stage("Docker build>>"){
+    stage(" Docker build "){
         sh 'docker version'
         sh 'docker build -t jenkins-test1 .'
         sh 'docker image list'
