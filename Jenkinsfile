@@ -21,7 +21,27 @@ node {
         sh 'docker push  sharanabasava022/navjoyy-ui:jenkins-test1'
     }
     
-    stage("kubernetes deployment"){
-        sh 'kubectl delete pod delete-service-develop-7888b9fcbd-9wgj6'
+    // stage("kubernetes deployment"){
+    //     sh 'kubectl delete pod delete-service-develop.*'
+    // }
+
+    stage("kubernetes deployment") {
+      script {
+        // Use 'kubectl get pods' to list all pods
+        def pods = sh(script: 'kubectl get pods -o=name', returnStdout: true).trim().split('\n')
+
+        // Define a regular expression pattern to match pod names
+        def regexPattern = ~/delete-service-develop-.*$/
+
+        // Iterate through the list of pod names and delete matching pods
+        for (def pod : pods) {
+            if (pod =~ regexPattern) {
+                sh "kubectl delete $pod"
+            }
+        }
     }
-} 
+}
+
+
+    
+}
