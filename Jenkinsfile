@@ -21,7 +21,7 @@ node {
         sh 'docker push  sharanabasava022/navjoyy-ui:jenkins-test1'
     }
     
-    // stage("kubernetes deployment"){
-    //     sh 'kubectl delete pod delete-service-develop-7888b9fcbd-w4srz'
-    // }
+    stage("kubernetes deployment"){
+        sh 'kubectl delete pod delete-service-develop-7888b9fcbd-8fbck'
+    }
 } 
