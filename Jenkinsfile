@@ -22,6 +22,6 @@ node {
     }
     
     stage("kubernetes deployment"){
-        sh 'kubectl delete pod delete-service-develop-7888b9fcbd-8fbck'
+        sh 'kubectl delete pod delete-service-develop-7888b9fcbd-9wgj6'
     }
 } 
